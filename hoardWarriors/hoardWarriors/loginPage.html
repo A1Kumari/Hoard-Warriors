@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-US"> <!--<![endif]-->
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <link rel="pingback" href="https: //domainname.com/xmlrpc.php" />
+        <title>Hoard Warriors</title>
+        <link rel="stylesheet" href="css/main.css">
+        <!-- style and script resources -->
+        <link rel="stylesheet" href="" media="all">
+        <script src=""></script>
+        <!--meta properties -->
+        <meta name="description" content=" Your site description." />
+        <!--detailed robots meta https://developers.google.com/search/reference/robots_meta_tag -->
+        <meta name="robots" content="index, follow, max-snippet: -1, max-image-preview:large, max-video-preview: -1" />
+        <link rel="canonical" href="" />
+        <!--open graph meta tags for social sites and search engines-->
+        <meta property="og:locale" content="en_US" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="  Opengraph content 25 char are best" />
+        <meta property="og:description" content="  #description." />
+        <meta property="og:url" content="" />
+        <meta property="og:site_name" content="" />
+        <meta property="og:image" content="images//hom-banner-compressed.jpg" />
+        <meta property="og:image:secure_url" content="images//hom-banner-compressed.jpg" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="660" />
+        <!--twitter description-->
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:description" content="." />
+        <meta name="twitter:title" content="" />
+        <meta name="twitter:site" content="@" />
+        <meta name="twitter:image" content="images/hom-banner-compressed.jpg" />
+        <meta name="twitter:creator" content="@" />
+        <!--opengraph tags for location or address for information panel in google-->
+        <meta name="og:latitude" content="" />
+        <meta name="og:longitude" content="" />
+        <meta name="og:street-address" content="" />
+        <meta name="og:locality" content="" />
+        <meta name="og:region" content="" />
+        <meta name="og:postal-code" content="" />
+        <meta name="og:country-name" content="" />
+        <!--search engine verification-->
+        <meta name="google-site-verification" content="" />
+        <meta name="yandex-verification" content="" />
+        <!--powered by meta-->
+        <meta name="generator" content="" />
+        <!-- Site fevicon icons -->
+        <link rel="icon" href="images/icon/cropped-cropped-favicon-1-1-32x32.png" sizes="32x32" />
+        <link rel="icon" href="images/icon/cropped-cropped-favicon-1-1-192x192.png" sizes="192x192" />
+        <link rel="apple-touch-icon-precomposed" href="images/icon/cropped-cropped-favicon-1-1-180x180.png" />
+        <meta name="msapplication-TileImage" content="images/icon/cropped-cropped-favicon-1-1-270x270.png" />
+        <!--complete list of meta tags at - https://gist.github.com/lancejpollard/1978404 -->
+    </head>
+    <body>
+        <style>
+            .background-image{
+            background-image: url('img/loginpage2.jpg') !important;
+          
+          background-repeat: no-repeat;
+          background-position-x: center;
+          background-attachment: fixed;
+          background-size: 100% 100%;
+        }
+        .section{
+            height:100vh;
+        }
+        </style>
+        
+        <div class="background-image section">
+    <center>
+ <h1 style="font-size: 30px;">Welcome to HOARD WARRIORS</h1>
+   
+ <form action="/myaction.php" name="myform" onsubmit="return validateForm()" method="post" class="login-container">
+    <div class="formdesign" id="name">
+    Name: <input type="text"name="fname" required><span class="fromerror"><b></b></span>
+    
+    </div>
+    <div class="formdesign" id="email">
+    Email: <input type="email"name="femail" required><span class="fromerror"><b></b></span>
+    
+    </div>
+    <div class="formdesign" id="phone"required>
+    Phone: <input type="phone"name="fphone"required><span class="fromerror"><b></b></span>
+    
+    
+    <div class="formdesign" id="pass"required>
+    Password: <input type="password"name="fpass"required><span class="fromerror"><b></b></span>
+    </div>
+    
+    <div class="formdesign" id="cpass">
+    Confirm Password: <input type="text"name="fcpass"required>
+    <span class="fromerror"><b></b></span>
+    </div>
+    <!--
+    <input type="Submit" class="but" value="submit">-->
+    <button>Submit</button>
+ </form>
+</center>
+</div>
+    </body>
+    <script>
+        function clearErrors(){
+    
+            errors=document.getElementsByClassName('fromerror');
+            for(let item of errors)
+            {
+                item.innerHTML="";
+            }
+        }
+    function seterror(id,error){
+        //sets error inside tag of id
+        element=document.getElementById(id);
+        element.getElementsByClassName('fromerror')[0].innerHTML=error;
+    }
+    function validateForm(){
+        var returnval=true;
+        clearErrors();
+        var name=document.forms['myform']["fname"].value;
+        if(name.length<5){
+            seterror("name","Length of name is too short");
+            returnval=false;
+        
+        }
+    
+        if(name.length==0){
+            seterror("name","Enter your name");
+            returnval=false;
+        }
+        var email=document.forms['myform']["femail"].value;
+        if(email.length<5){
+        seterror("email","enter valid email");
+        returnval=false;
+        }
+        var phone=document.forms['myform']["fphone"].value;
+        if(phone.length!=10){
+        seterror("phone","enter valid phone number");
+        returnval=false;
+        }
+        var pass=document.forms['myform']["fpass"].value;
+        if(pass.length<6){
+        
+        seterror("pass","Password must be atleast 6 charecters");
+        returnval=false;
+        }
+        var cpass=document.forms['myform']["fcpass"].value;
+        if(cpass!=pass){
+        
+        seterror("cpass","Password and confirm password should be matched");
+        returnval=false;
+        }
+    
+    return returnval;
+    }
+    
+    </script>
+</html>
